@@ -20,7 +20,7 @@ class Handler(webapp2.RequestHandler):
 
 class Rot13Handler(Handler):
 	def get(self):
-		self.render('rot13.heml')
+		self.render('rot13.html')
 
 	def post(self):
 		rot13 = ''
