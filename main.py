@@ -22,7 +22,7 @@ class Handler(webapp2.RequestHandler):
 	def render(self, template, **kw):
 		self.response.out.write(render_str(template, **kw))
 
-class Rot13Handler(Handler):
+class Rot13(Handler):
 	def get(self):
 		self.render('rot13.html')
 
@@ -34,6 +34,6 @@ class Rot13Handler(Handler):
 
 		self.render('rot13.html', text = rot13)
 
-app = webapp2.WSGIApplication([('/rot13', Rot13Handler),
+app = webapp2.WSGIApplication([('/rot13', Rot13)
 								],
 								debug=True)
